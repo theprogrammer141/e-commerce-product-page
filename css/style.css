@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1d2026;
+  background-color: #f8f9fc;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 3rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+/* NavBar */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+
+.cart-avatar-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #6b7280;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1d2026;
+}
+
+nav ul li a:active {
+  color: #1d2026;
+}
+
+nav ul li a:focus {
+  color: #1d2026;
+}
+
+nav ul li a:focus-visible {
+  color: #1d2026;
+}
+
+nav ul li a:focus-visible:hover {
+  color: #1d2026;
+}
+
+nav ul li a:focus-visible:active {
+  color: #1d2026;
+}
+
+.cart-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.avatar-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+nav img:hover {
+  opacity: 0.8;
+}
+
+nav img:active {
+  opacity: 0.6;
+}
+
+nav img:focus {
+  opacity: 0.8;
+}
+
+nav img:focus-visible {
+  opacity: 0.8;
+}
+
+nav img:focus-visible:hover {
+  opacity: 0.8;
+}
+
+nav img:focus-visible:active {
+  opacity: 0.6;
+}
+
+/* Main */
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  margin: 4rem 4rem auto;
+}
+
+.product-image-container {
+  flex: 1;
+}
+
+.product-image-container img {
+  width: 448px;
+  height: 445px;
+  border-radius: 1rem;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.company-name {
+  color: #6b7280;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.product-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 450px;
+  margin-bottom: 1rem;
+}
+
+.pricing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.product-price {
+  color: #1d2026;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-discount {
+  color: #1d2026;
+  font-size: 1rem;
+  background-color: #1d2026;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #f8f9fc;
+  font-weight: 700;
+}
+
+.product-original-price {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: line-through;
+  margin-bottom: 1rem;
+}
+
+.quantity-add-to-cart {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f2f4f8ff;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 150px;
+}
+
+.quantity-minus {
+  cursor: pointer;
+  color: #ff7d1aff;
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+}
+
+.quantity-count {
+  color: #1d2026;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.quantity-plus {
+  cursor: pointer;
+  color: #ff7d1aff;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+}
+
+.add-to-cart {
+  color: #1d2026;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #ff7d1aff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: none;
+  width: 300px;
+  box-shadow: 2px 3px 8px 1px #ff7d1aff;
+}
+
+.add-to-cart-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: #1d2026;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
