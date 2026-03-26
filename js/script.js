@@ -5,6 +5,9 @@ const productImage = document.querySelector('.product-image');
 const navLinks = document.querySelectorAll('.nav-link');
 const cartIcon = document.querySelector('.cart-icon');
 const cartModal = document.querySelector('#cart-modal');
+const quantityCount = document.querySelector('.quantity-count');
+const reduceQuantityButton = document.querySelector('.quantity-minus');
+const addQuantityButton = document.querySelector('.quantity-plus');
 
 thumbnails.forEach((thumbnail) => {
     thumbnail.addEventListener('click', function (e) {
@@ -49,4 +52,18 @@ document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         cartModal.classList.add('hidden');
     }
+});
+
+reduceQuantityButton.addEventListener('click', function () {
+    let quantity = Number(quantityCount.textContent);
+    if (quantity > 0) {
+        quantity -= 1;
+    }
+    quantityCount.textContent = quantity.toString();
+});
+
+addQuantityButton.addEventListener('click', function () {
+    let quantity = Number(quantityCount.textContent);
+    quantity += 1;
+    quantityCount.textContent = quantity.toString();
 });
