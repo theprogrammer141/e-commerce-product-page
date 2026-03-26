@@ -26,7 +26,7 @@ header {
 }
 
 /* NavBar */
-nav {
+.navbar {
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -38,42 +38,43 @@ nav {
   align-items: center;
   gap: 2rem;
   margin-left: auto;
+  position: relative;
 }
 
-nav ul {
+.nav-links {
   display: flex;
   list-style: none;
   gap: 2rem;
 }
 
-nav ul li a {
+.nav-link {
   text-decoration: none;
   color: #6b7280;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+.nav-link:hover {
   color: #1d2026;
 }
 
-nav ul li a:active {
+.nav-link:active {
   color: #1d2026;
 }
 
-nav ul li a:focus {
+.nav-link:focus {
   color: #1d2026;
 }
 
-nav ul li a:focus-visible {
+.nav-link:focus-visible {
   color: #1d2026;
 }
 
-nav ul li a:focus-visible:hover {
+.nav-link:focus-visible:hover {
   color: #1d2026;
 }
 
-nav ul li a:focus-visible:active {
+.nav-link:focus-visible:active {
   color: #1d2026;
 }
 
@@ -83,34 +84,70 @@ nav ul li a:focus-visible:active {
   cursor: pointer;
 }
 
+#cart-modal {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  width: 400px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+#cart-modal-title {
+  font-weight: 700;
+  padding: 0.5rem;
+  border-bottom: 1px solid #6b7280;
+  margin-bottom: 1rem;
+}
+
+#cart-modal-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6b7280;
+  font-weight: 700;
+  margin-top: 5rem;
+}
+
 .avatar-icon {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
 }
 
-nav img:hover {
+.logo:hover {
   opacity: 0.8;
 }
 
-nav img:active {
+.logo:active {
   opacity: 0.6;
 }
 
-nav img:focus {
+.logo:focus {
   opacity: 0.8;
 }
 
-nav img:focus-visible {
+.logo:focus-visible {
   opacity: 0.8;
 }
 
-nav img:focus-visible:hover {
+.logo:focus-visible:hover {
   opacity: 0.8;
 }
 
-nav img:focus-visible:active {
+.logo:focus-visible:active {
   opacity: 0.6;
+}
+
+.selected-link {
+  color: #1d2026;
+  border-bottom: 3px solid #ff7d1aff;
+  padding-bottom: 2rem;
+  transition: all 0.3s ease;
 }
 
 /* Main */
@@ -299,4 +336,15 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+/* Utilities */
+.selected {
+  border: 3px solid #ff7d1aff;
+  opacity: 0.5;
+  border-radius: 0.5rem;
+}
+
+.hidden{
+  display: none;
 }

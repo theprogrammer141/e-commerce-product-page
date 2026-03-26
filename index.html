@@ -15,17 +15,21 @@
   <body>
     <!-- Header -->
     <header>
-      <nav>
-        <img src="./images/logo.svg" alt="Logo" />
-        <ul>
-          <li><a href="#">Collections</a></li>
-          <li><a href="#">Men</a></li>
-          <li><a href="#">Women</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+      <nav class="navbar">
+        <img class="logo" src="./images/logo.svg" alt="Logo" />
+        <ul class="nav-links">
+          <li><a class="nav-link selected-link" href="#">Collections</a></li>
+          <li><a class="nav-link" href="#">Men</a></li>
+          <li><a class="nav-link" href="#">Women</a></li>
+          <li><a class="nav-link" href="#">About</a></li>
+          <li><a class="nav-link" href="#">Contact</a></li>
         </ul>
         <div class="cart-avatar-container">
           <img src="./images/icon-cart.svg" alt="Cart" class="cart-icon" />
+          <div role="dialog" aria-modal="true" class="hidden" id="cart-modal">
+            <p id="cart-modal-title">Cart</p>
+            <p id="cart-modal-description">Your cart is empty</p>
+          </div>
           <img
             src="./images/image-avatar.png"
             alt="Avatar"
@@ -44,10 +48,23 @@
           alt="Product"
         />
         <div class="thumbnails">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail" />
-          <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail" />
-          <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail" />
-          <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail" />
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="Thumbnail"
+            class="selected"
+          />
+          <img
+            src="./images/image-product-2-thumbnail.jpg"
+            alt="Thumbnail"
+          />
+          <img
+            src="./images/image-product-3-thumbnail.jpg"
+            alt="Thumbnail"
+          />
+          <img
+            src="./images/image-product-4-thumbnail.jpg"
+            alt="Thumbnail"
+          />
         </div>
       </section>
       <section class="product-info">
