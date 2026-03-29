@@ -13,9 +13,9 @@ const cartModalDescription = document.querySelector('#cart-modal-description');
 const productTitle = document.querySelector('.product-title');
 const productPrice =
     document.querySelector('.product-price').firstChild.textContent;
+const cartIconBadge = document.querySelector('.cart-icon-badge');
 
 let cartItem = {};
-
 const savedItem = localStorage.getItem('cartItem');
 
 thumbnails.forEach((thumbnail) => {
@@ -90,6 +90,7 @@ const addToCart = function(){
         localStorage.setItem('cartItem', JSON.stringify(cartItem));
         renderCart(cartItem);
         quantityCount.textContent = 0;
+        updateBadge(cartItem);
     }
 }
 
@@ -114,9 +115,19 @@ const renderCart = function(cartItem){
     }   
 }
 
+const updateBadge = function (cartItem) {
+    if (cartItem.quantity > 0) {
+        cartIconBadge.textContent = cartItem.quantity;
+        cartIconBadge.classList.remove('hidden');
+    } else {
+        cartIconBadge.classList.add('hidden');
+    }
+};
+
 if (savedItem) {
     cartItem = JSON.parse(savedItem);
     renderCart(cartItem);
+    updateBadge();
 }
 
 addToCartButton.addEventListener('click', addToCart);
@@ -126,6 +137,8 @@ cartModal.addEventListener("click", function(e){
         cartModalDescription.textContent = 'Your cart is empty';
         localStorage.removeItem('cartItem');
         cartItem = {};
+        updateBadge(cartItem);
     }
 });
+
 
