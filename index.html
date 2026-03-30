@@ -16,14 +16,23 @@
     <!-- Header -->
     <header>
       <nav class="navbar">
+        <button class="hamburger-menu">
+          <img src="./images/icon-menu.svg" alt="Menu" />
+        </button>
+        <div class="nav-overlay"></div>
         <img class="logo" src="./images/logo.svg" alt="Logo" />
-        <ul class="nav-links">
-          <li><a class="nav-link selected-link" href="#">Collections</a></li>
-          <li><a class="nav-link" href="#">Men</a></li>
-          <li><a class="nav-link" href="#">Women</a></li>
-          <li><a class="nav-link" href="#">About</a></li>
-          <li><a class="nav-link" href="#">Contact</a></li>
-        </ul>
+        <div class="nav-sidebar">
+          <button class="close-menu">
+            <img src="./images/icon-close.svg" alt="Close" />
+          </button>
+          <ul class="nav-links">
+            <li><a class="nav-link selected-link" href="#">Collections</a></li>
+            <li><a class="nav-link" href="#">Men</a></li>
+            <li><a class="nav-link" href="#">Women</a></li>
+            <li><a class="nav-link" href="#">About</a></li>
+            <li><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </div>
         <div class="cart-avatar-container">
           <img src="./images/icon-cart.svg" alt="Cart" class="cart-icon"/>
           <span class="cart-icon-badge hidden">0</span>

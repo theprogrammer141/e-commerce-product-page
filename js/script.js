@@ -16,6 +16,10 @@ const productPrice =
 const cartIconBadge = document.querySelector('.cart-icon-badge');
 const arrowLeftBtn = document.querySelector('.arrow-left');
 const arrowRightBtn = document.querySelector('.arrow-right');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const closeMenuBtn = document.querySelector('.close-menu');
+const navBar = document.querySelector('.navbar');
+const navOverlay = document.querySelector('.nav-overlay');
 
 let cartItem = {};
 let currentIndex = 0;
@@ -119,6 +123,7 @@ document.addEventListener('click', function () {
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         cartModal.classList.add('hidden');
+        navBar.classList.remove('nav-open');
     }
 });
 
@@ -138,8 +143,8 @@ addQuantityButton.addEventListener('click', function () {
 
 addToCartButton.addEventListener('click', addToCart);
 
-cartModal.addEventListener("click", function(e){
-    if(e.target.closest('.delete-item')){
+cartModal.addEventListener('click', function (e) {
+    if (e.target.closest('.delete-item')) {
         cartModalDescription.textContent = 'Your cart is empty';
         localStorage.removeItem('cartItem');
         cartItem = {};
@@ -150,11 +155,34 @@ cartModal.addEventListener("click", function(e){
 arrowLeftBtn.addEventListener('click', function () {
     if (currentIndex > 0) {
         switchToImage(currentIndex - 1);
+    } else if (currentIndex === 0) {
+        currentIndex =
+            (currentIndex - 1 + thumbnailsArray.length) %
+            thumbnailsArray.length;
+        switchToImage(currentIndex);
     }
 });
 
 arrowRightBtn.addEventListener('click', function () {
     if (currentIndex < thumbnailsArray.length - 1) {
         switchToImage(currentIndex + 1);
+    } else if (currentIndex === thumbnailsArray.length - 1) {
+        currentIndex = (currentIndex + 1) % thumbnailsArray.length;
+        switchToImage(currentIndex);
     }
+});
+
+hamburgerMenu.addEventListener('click', function () {
+    navBar.classList.add('nav-open');
+    document.body.style.overflow = 'hidden';
+});
+
+closeMenuBtn.addEventListener('click', function () {
+    navBar.classList.remove('nav-open');
+    document.body.style.overflow = '';
+});
+
+navOverlay.addEventListener('click', function () {
+    navBar.classList.remove('nav-open');
+    document.body.style.overflow = '';
 });
