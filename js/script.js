@@ -89,7 +89,7 @@ const switchToImage = function (index) {
 if (savedItem) {
     cartItem = JSON.parse(savedItem);
     renderCart(cartItem);
-    updateBadge();
+    updateBadge(cartItem);
 }
 
 thumbnails.forEach((thumbnail) => {
